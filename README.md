@@ -1,13 +1,11 @@
 ## rust-mobile
 
-Collection of scripts to build rust for iOS and Android platforms.
+Collection of scripts to build Rust for iOS and Android platforms.
 
 ## Usage
 
 ```bash
 git clone https://github.com/Nercury/rust-mobile.git rust-mobile
-mkdir rust-build
-cd rust-build
 ```
 
 For Android, have NDK installed and create and edit local.properties file:
@@ -22,6 +20,8 @@ to uncomment relevant lines in `build-all.sh`.
 When ready, run it all with (from `rust-build` dir, although it does not matter much):
 
 ```bash
+mkdir rust-build
+cd rust-build
 ../rust-mobile/build-all.sh
 ```
 
