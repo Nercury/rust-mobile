@@ -15,7 +15,7 @@ cp local.properties.example local.properties
 ```
 
 For iOS, it's enough to make sure XCode can build iOS projects. If not building for iOS, it is easy
-to uncomment relevant lines in `build-all.sh`.
+to comment out relevant lines in `build-all.sh`.
 
 When ready, run it all with (from `rust-build` dir, although it does not matter much):
 
