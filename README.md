@@ -9,7 +9,7 @@ Collection of scripts to build Rust for iOS and Android platforms.
 - NDK (and modifying `local.properties` if you will be compiling for Android)
 - XCode if you will be compiling for iOS
 
-## Usage
+## Building
 
 ```bash
 git clone https://github.com/Nercury/rust-mobile.git rust-mobile
@@ -33,6 +33,25 @@ cd rust-build
 ```
 
 All immediate files and the output will be places in `rust-build` dir.
+
+## Usage
+
+To the resulting binaries should be integrated into multirust, so you can now compile
+things with (in your project dir):
+
+```bash
+multirust override ios
+cargo build --target x86_64-apple-ios
+```
+
+Or:
+
+```bash
+multirust override android
+cargo build --target arm-linux-androideabi --release
+```
+
+For the exact list of output platforms, look at `build-android.sh` and `build-ios.sh` scripts.
 
 ## Used Resources
 
