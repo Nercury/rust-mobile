@@ -2,6 +2,13 @@
 
 Collection of scripts to build Rust for iOS and Android platforms.
 
+## Requirements
+
+- Scripts were tested only on OSX
+- Multirust [`https://github.com/brson/multirust`](https://github.com/brson/multirust)
+- NDK (and modifying `local.properties` if you will be compiling for Android)
+- XCode if you will be compiling for iOS
+
 ## Usage
 
 ```bash

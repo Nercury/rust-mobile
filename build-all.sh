@@ -2,7 +2,7 @@
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 BUILD_DIR=`pwd`
-RUST_VERSION=nightly-2016-02-04
+RUST_VERSION=nightly-2016-02-11
 
 echo "ensuring multirust has ${RUST_VERSION}..."
 
@@ -37,3 +37,5 @@ if [ $? -ne 0 ]; then
     echo "Android build failed"
     exit 1
 fi
+
+${SCRIPT_DIR}/link-multirust.sh ${RUST_VERSION}
