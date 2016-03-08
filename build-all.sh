@@ -2,7 +2,7 @@
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 BUILD_DIR=`pwd`
-RUST_VERSION=nightly-2016-02-11
+RUST_VERSION=nightly-2016-03-04
 
 echo "ensuring multirust has ${RUST_VERSION}..."
 

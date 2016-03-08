@@ -32,9 +32,9 @@ RUST_TARGETS+=("i686-linux-android")
 #TOOLCHAINS+=("mipsel-linux-android")
 #RUST_TARGETS+= does not exist yet
 
-#ARCHS+=("arm64")
-#TOOLCHAINS+=("aarch64-linux-android-4.8")
-#RUST_TARGETS+=("aarch64-linux-android") # fails to build
+ARCHS+=("arm64")
+TOOLCHAINS+=("aarch64-linux-android-4.9")
+RUST_TARGETS+=("aarch64-linux-android")
 
 #ARCHS+=("x86_64")
 #TOOLCHAINS+=("x86_64")
@@ -56,9 +56,13 @@ done
 cd ${BUILD_DIR}/build-android
 
 ../rust/configure \
-    --target=arm-linux-androideabi,i686-linux-android \
+    --target=arm-linux-androideabi,i686-linux-android,aarch64-linux-android \
+    --enable-ccache \
+    --disable-optimize-tests \
+    --disable-docs \
     --arm-linux-androideabi-ndk=${BUILD_DIR}/build-android/standalone-ndk/arm \
     --i686-linux-android-ndk=${BUILD_DIR}/build-android/standalone-ndk/x86 \
+    --aarch64-linux-android-ndk=${BUILD_DIR}/build-android/standalone-ndk/arm64 \
     --prefix=${BUILD_DIR}/out-android
 
 if [ $? -ne 0 ]; then

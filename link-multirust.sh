@@ -7,9 +7,11 @@ if [ $? -ne 0 ]; then
 fi
 
 multirust update ios --link-local ${BUILD_DIR}/out-ios
-ln -s $HOME/.multirust/toolchains/$1/bin/cargo ${BUILD_DIR}/out-ios/bin
+rm ${BUILD_DIR}/out-ios/bin/cargo 2> /dev/null
+ln -s $HOME/.multirust/toolchains/nightly/bin/cargo ${BUILD_DIR}/out-ios/bin/cargo
 
 multirust update android --link-local ${BUILD_DIR}/out-android
-ln -s $HOME/.multirust/toolchains/$1/bin/cargo ${BUILD_DIR}/out-android/bin
+rm ${BUILD_DIR}/out-android/bin/cargo 2> /dev/null
+ln -s $HOME/.multirust/toolchains/nightly/bin/cargo ${BUILD_DIR}/out-android/bin/cargo
 
 exit 0

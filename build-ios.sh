@@ -5,6 +5,9 @@ BUILD_DIR=`pwd`
 mkdir -p build-ios
 cd build-ios
 ../rust/configure \
+    --enable-ccache \
+    --disable-optimize-tests \
+    --disable-docs \
     --target=armv7-apple-ios,armv7s-apple-ios,i386-apple-ios,aarch64-apple-ios,x86_64-apple-ios \
     --prefix=${BUILD_DIR}/out-ios
 
