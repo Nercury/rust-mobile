@@ -21,11 +21,11 @@ TOOLCHAINS=()
 RUST_TARGETS=()
 
 ARCHS+=("arm")
-TOOLCHAINS+=("arm-linux-androideabi-4.8")
+TOOLCHAINS+=("arm-linux-androideabi-4.9")
 RUST_TARGETS+=("arm-linux-androideabi")
 
 ARCHS+=("x86")
-TOOLCHAINS+=("x86-4.8")
+TOOLCHAINS+=("x86-4.9")
 RUST_TARGETS+=("i686-linux-android")
 
 #ARCHS+=("mips")
@@ -50,7 +50,7 @@ do
     TOOLCHAIN=${TOOLCHAINS[$i]}
     mkdir -p ${ARCH}
     ${NDK_ROOT}/build/tools/make-standalone-toolchain.sh \
-        --platform=android-21 --system=darwin-x86_64 --arch=${ARCH} --toolchain=${TOOLCHAIN} --install-dir=${ARCH}
+        --platform=android-21 --arch=${ARCH} --toolchain=${TOOLCHAIN} --install-dir=${ARCH}
 done
 
 cd ${BUILD_DIR}/build-android
