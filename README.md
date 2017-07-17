@@ -2,7 +2,7 @@
 
 Collection of scripts to build Rust for iOS and Android platforms.
 
-__ Hey! This project is OUTDATED __. Nowadays you can get pre-built std library using rustup!
+**Hey! This project is OUTDATED**. Nowadays you can get pre-built std library using rustup!
 
 ## Requirements
 
